@@ -1,8 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ValidateTokenGuard } from './guards/validate-token.guard';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule )
+  },
+  {
+    path: 'productos',
+    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosModule ),
+    canActivate: [ ValidateTokenGuard],
+    canLoad: [ ValidateTokenGuard]
+  },
+  {
+    path: '**',
+    redirectTo: 'auth'
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
