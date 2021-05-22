@@ -1,10 +1,12 @@
-<h1>Main Productos</h1>
-<hr>
-<h3>Esta pagona solo deberia funcionar si estas logueado</h3>
+<div class="card">
+    <div class="card-header">
+        <nav class="nav nav-pills nav-fill">
+            <a class="nav-link" routerLink="/productos/gallery" routerLinkActive="active">Lista</a>
+            <a class="nav-link" routerLink="/productos/edit" routerLinkActive="active">Actualizar</a>
+            <a class="nav-link" routerLink="/productos/create" routerLinkActive="active">Crear</a>
+            <button (click)="logout()" class="btn btn-danger">Logout</button>
+        </nav>
+    </div>
+    <router-outlet></router-outlet>
 
-<h2>User info</h2>
-<pre> {{ usuario | json }} </pre>
-
-<button (click)="logout()">Logout</button>
-
-<router-outlet></router-outlet>
+</div>
