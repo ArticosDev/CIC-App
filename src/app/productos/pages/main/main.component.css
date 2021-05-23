@@ -1,4 +1,8 @@
 .card {
     height: auto;
-    width: 800px;
+    width: 70%;
+}
+
+.row {
+    width: 100%;
 }

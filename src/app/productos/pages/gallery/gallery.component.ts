@@ -1,15 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductosService } from '../../services/productos.service';
+import { Producto } from '../../interfaces/productos.interface';
 
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
-  styles: []
+  styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
 
-  constructor() { }
+  productos: Producto[] = [];
 
-  ngOnInit(): void {
+  constructor( private productService: ProductosService) { 
+    this.productService.getProductos().subscribe(
+      (data : any) => {
+        this.productos = data;     
+        console.log(data);
+           
+      }
+    );  
   }
 
+  ngOnInit(): void {
+
+  }
+  
 }

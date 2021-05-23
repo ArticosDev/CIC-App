@@ -1,31 +1,48 @@
-<div class="card-body">
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="card-body animate__animated animate__fadeIn" *ngIf="productos">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Codigo</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Stock</th>
+                                <th scope="col">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of productos">
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.cod }}</td>
+                                <td>{{ item.price }}</td>
+                                <td>{{ item.stock }}</td>
+                                <td *ngIf="item.status">Activado</td>
+                                <td *ngIf="!item.status">Desactivado</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-5"></div>
+                <div class="col-1">
+                    <span style="color: #FFC312;"><i class="fa fa-toggle-left fa-4x"></i></span>
+                </div>
+                <div class="col-1">
+                    <span style="color: #FFC312;"><i class="fa fa-toggle-right fa-4x"></i></span>
+                </div>
+                <div class="col-5"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card-body" *ngIf="!productos">
+    <i class="fas fa-spinner fa-spin"></i>
 </div>

@@ -2,8 +2,8 @@ export interface Producto {
     name: string;
     cod: string;
     stock: string;
-    precio: string;
-    oferta: string;
-    categoria: string;
-    estado: boolean;
+    price: string;
+    offertPrice: number;
+    category: number;
+    status: boolean;
 }

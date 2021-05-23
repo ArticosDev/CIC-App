@@ -23,29 +23,22 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <input class="form-control" type="text" formControlName="precio" placeholder="Precio">
+                        <input class="form-control" type="number" formControlName="price" placeholder="Precio">
                     </div>
                     <div class="col">
-                        <input class="form-control" type="text" formControlName="oferta" placeholder="Precio de Oferta">
+                        <input class="form-control" type="number" formControlName="offertPrice" placeholder="Precio de Oferta">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <select id="cars" formControlName="categoria">
-                        <option value="" disabled selected>Categoria</option>
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="audi">Audi</option>
-                      </select>
+                        <select id="cars" formControlName="category">                        
+                           <option value="60a817dda92e181a700b5851">Camas</option>
+                        </select>
                     </div>
                     <div class="col">
-                        <select id="cars" formControlName="estado">
-                        <option value="" disabled selected>Estado</option>
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="audi">Audi</option>
+                        <select id="cars" formControlName="status">
+                        <option value="false">Desactivado</option>
+                        <option value="true">Activado</option>
                       </select>
                     </div>
                 </div>
