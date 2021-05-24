@@ -11,6 +11,9 @@ import { ProductosService } from '../../services/productos.service';
 })
 export class UpdateComponent implements OnInit {
 
+  get categories(){
+    return this.productService.categories;
+  }
   producto: Producto;
   
   miFormulario: FormGroup = this.fb.group({
@@ -27,6 +30,8 @@ export class UpdateComponent implements OnInit {
     private productService: ProductosService) { }
 
   ngOnInit(): void {
+
+    this.productService.getCategories().subscribe();
 
     const id = this.route.snapshot.paramMap.get('id');
     this.productService.getProducto( id ).subscribe( (data:Producto) => { 

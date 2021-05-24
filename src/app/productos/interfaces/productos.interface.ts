@@ -4,6 +4,12 @@ export interface Producto {
     stock: string;
     price: string;
     offertPrice: number;
-    category: number;
+    category: string;
+    status: boolean;
+}
+
+export interface Categoria {
+    _id: string;
+    name: string;
     status: boolean;
 }

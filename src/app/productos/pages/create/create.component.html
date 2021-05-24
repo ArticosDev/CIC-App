@@ -2,12 +2,15 @@
     <div class="row">
         <div class="col-12">
             <div class="row">
-                <div class="col-12">
-                    <h3>Crear Producto</h3>
+                <div class="col-6">
+                    <button class="btn btn-success" style="float: right; width: 100%;" (click)="menu = true">Crear Producto</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-success" style="float: right; width: 100%;" (click)="menu = false">Crear Categoria</button>
                 </div>
             </div>
 
-            <form autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="crear()">
+            <form *ngIf="menu" autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="crear()">
                 <div class="row">
                     <div class="col-12">
                         <h5>Nombre Producto</h5>
@@ -37,15 +40,14 @@
                 <div class="row">
                     <div class="col">
                         <h5>Categoria</h5>
-                        <select id="category" formControlName="category">                        
-                           <option value="60a817dda92e181a700b5851">Camas</option>
+                        <select id="category" formControlName="category">   
+                            <option *ngFor="let item of categories" [value]="item._id">{{ item.name }}</option>                      
                         </select>
                     </div>
                     <div class="col">
                         <h5>Estado</h5>
                         <select id="status" formControlName="status">
                         <option value="false">Desactivado</option>
-                        <option value="true">Activado</option>
                       </select>
                     </div>
                 </div>
@@ -55,6 +57,26 @@
                     </div>
                     <div class="col">
                         <button type="submit" class="btn btn-primary" style="float: right;" [disabled]="miFormulario.invalid">Agregar <b>+</b></button>
+                    </div>
+                </div>
+            </form>
+
+
+
+            <form *ngIf="!menu" autocomplete="off" [formGroup]="miFormulario2" (ngSubmit)="crearCat()">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Nombre Categoria</h5>
+                        <input class="form-control" type="text" formControlName="name" placeholder="Categoria...">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary" style="float: right;" [disabled]="miFormulario2.invalid">Agregar <b>+</b></button>
                     </div>
                 </div>
             </form>
