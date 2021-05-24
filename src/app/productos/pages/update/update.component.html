@@ -1,0 +1,66 @@
+<div class="card-body">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <h3>Actualizar</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <form autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="update()">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>Nombre Producto</h5>
+                                <input class="form-control" type="text" formControlName="name" placeholder="Nombre Producto">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h5>Codigo Producto</h5>
+                                <input class="form-control" type="text" formControlName="cod" placeholder="Codigo Producto">
+                            </div>
+                            <div class="col">
+                                <h5>Stock</h5>
+                                <input class="form-control" type="text" formControlName="stock" placeholder="Stock">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h5>Precio</h5>
+                                <input class="form-control" type="number" formControlName="price" placeholder="Precio">
+                            </div>
+                            <div class="col">
+                                <h5>Precio de Oferta</h5>
+                                <input class="form-control" type="number" formControlName="offertPrice" placeholder="Precio de Oferta">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h5>Categoria</h5>
+                                <select id="cars" formControlName="category">                        
+                                   <option value="60a817dda92e181a700b5851">Camas</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <h5>Estado</h5>
+                                <select formControlName="status">
+                                <option value="false">Desactivado</option>
+                                <option value="true">Activado</option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-success" style="float: right;">Actualizar <b>+</b></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

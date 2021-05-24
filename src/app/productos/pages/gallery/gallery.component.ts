@@ -14,9 +14,7 @@ export class GalleryComponent implements OnInit {
   constructor( private productService: ProductosService) { 
     this.productService.getProductos().subscribe(
       (data : any) => {
-        this.productos = data;     
-        console.log(data);
-           
+        this.productos = data;                       
       }
     );  
   }

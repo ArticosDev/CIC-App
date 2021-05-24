@@ -10,33 +10,40 @@
             <form autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="crear()">
                 <div class="row">
                     <div class="col-12">
+                        <h5>Nombre Producto</h5>
                         <input class="form-control" type="text" formControlName="name" placeholder="Nombre Producto">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
+                        <h5>Codigo Producto</h5>
                         <input class="form-control" type="text" formControlName="cod" placeholder="Codigo Producto">
                     </div>
                     <div class="col">
+                        <h5>Stock</h5>
                         <input class="form-control" type="text" formControlName="stock" placeholder="Stock">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
+                        <h5>Precio</h5>
                         <input class="form-control" type="number" formControlName="price" placeholder="Precio">
                     </div>
                     <div class="col">
+                        <h5>Precio de Oferta</h5>
                         <input class="form-control" type="number" formControlName="offertPrice" placeholder="Precio de Oferta">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <select id="cars" formControlName="category">                        
+                        <h5>Categoria</h5>
+                        <select id="category" formControlName="category">                        
                            <option value="60a817dda92e181a700b5851">Camas</option>
                         </select>
                     </div>
                     <div class="col">
-                        <select id="cars" formControlName="status">
+                        <h5>Estado</h5>
+                        <select id="status" formControlName="status">
                         <option value="false">Desactivado</option>
                         <option value="true">Activado</option>
                       </select>

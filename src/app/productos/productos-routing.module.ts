@@ -4,6 +4,7 @@ import { CreateComponent } from './pages/create/create.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { MainComponent } from './pages/main/main.component';
+import { UpdateComponent } from './pages/update/update.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
       { path: 'gallery', component: GalleryComponent  },
       { path: 'edit', component: EditComponent },
       { path: 'create', component: CreateComponent },
+      { path: 'update/:id', component: UpdateComponent },
       { path: '**', redirectTo: 'gallery' },
     ]
   }
